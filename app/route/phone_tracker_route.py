@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
-from app.utils.format_response_util import format_response
+
+from app.utils.datetime_handler_util import format_response_datetime
 from app.service.phone_tracker_service import (
     process_phone_tracker_data,
     get_strong_signal_connections,
@@ -25,7 +26,7 @@ def track_interaction():
         print(result)
 
         if result:
-            formatted_result = format_response(result)
+            formatted_result = format_response_datetime(result)
             return jsonify({
                 'status': 'success',
                 'message': 'Interaction tracked successfully',
