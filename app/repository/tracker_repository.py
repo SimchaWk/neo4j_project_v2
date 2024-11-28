@@ -1,6 +1,5 @@
 from typing import Optional, Dict, List
 from datetime import datetime
-
 from neo4j import Transaction
 
 from app.db.models import Device, Interaction
